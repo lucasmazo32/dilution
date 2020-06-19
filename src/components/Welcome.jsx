@@ -2,13 +2,12 @@ import React from 'react';
 import { Button, withStyles } from '@material-ui/core';
 import { ReactComponent as Logo } from '../assets/images/full-logo.svg';
 import apiFunctions from '../api/api';
-import getCode from '../helpers/auth_code';
 import '../assets/style/Welcome.css';
 
 const { authSpotify } = apiFunctions;
 
 export default function Welcome() {
-  const ColorButton = withStyles((theme) => ({
+  const ColorButton = withStyles(() => ({
     root: {
       display: 'block',
       color: '#ffffff',
@@ -28,8 +27,6 @@ export default function Welcome() {
     const currUrl = window.location.href;
     window.location.replace(authSpotify(currUrl.slice(0, currUrl.length - 1)));
   };
-
-  getCode();
 
   return (
     <div className="Welcome">
