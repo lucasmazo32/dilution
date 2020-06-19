@@ -1,11 +1,15 @@
-var requestOptions = {
-  method: 'GET',
-  redirect: 'follow'
+import info from './client_id'
+
+const { client_id } = info;
+
+const authSpotify = async () => {
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  const response = await fetch(`https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=http://localhost:3000&scope=user-read-private`, requestOptions);
+  console.log(response)
 };
 
-fetch("https://accounts.spotify.com/authorize?client_id=eb2f4cdf393141a0b1d63c2d2647fa2c&response_type=code&redirect_uri=http://localhost:3000", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-
-  
+export default { authSpotify };
