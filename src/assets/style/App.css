@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#e6e6e5));
+  background: linear-gradient(180deg, white 0%, #e6e6e5 100%);
+  font-family: 'Poppins', sans-serif;
+}
+/*# sourceMappingURL=App.css.map */
