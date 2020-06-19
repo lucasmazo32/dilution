@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button, withStyles } from '@material-ui/core';
 import { ReactComponent as Logo } from '../assets/images/full-logo.svg';
+import apiFunctions from '../api/api';
 import '../assets/style/Welcome.css';
+
+const { authSpotify } = apiFunctions;
 
 export default function Welcome() {
   const ColorButton = withStyles((theme) => ({
@@ -21,7 +24,7 @@ export default function Welcome() {
   }))(Button);
 
   const handleClick = () => {
-    console.log('I am working');
+    authSpotify();
   };
 
   return (

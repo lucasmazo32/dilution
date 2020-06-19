@@ -24,4 +24,4 @@ yarn-error.log*
 
 # API info
 
-src/api/client_id.js
+src/api/*
