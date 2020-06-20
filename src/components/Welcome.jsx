@@ -25,7 +25,7 @@ export default function Welcome() {
 
   const handleClick = () => {
     const currUrl = window.location.href;
-    window.location.replace(authSpotify(currUrl.slice(0, currUrl.length - 1)));
+    window.location.replace(authSpotify(currUrl.slice(0, currUrl.length - 5)));
   };
 
   return (

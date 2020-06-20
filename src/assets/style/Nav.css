@@ -1,0 +1,11 @@
+.Nav {
+  background-color: #1C75BC;
+}
+
+.Nav .discover {
+  display: block;
+  margin: 0 auto;
+  padding: 7.5px;
+  width: 45%;
+}
+/*# sourceMappingURL=Nav.css.map */

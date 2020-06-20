@@ -1,0 +1,24 @@
+.Main .discover-block {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.Main .discover-block .image {
+  display: block;
+  width: 100%;
+  padding-bottom: 50%;
+}
+
+.Main .discover-block .text {
+  display: block;
+  background-color: #1C75BC;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  padding: 7.5px 0;
+  font-size: 1.3rem;
+  color: white;
+}
+/*# sourceMappingURL=Main.css.map */
