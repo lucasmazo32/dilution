@@ -24,7 +24,7 @@ function App({ code, setCode }) {
 
   useEffect(() => {
     getCode();
-    const cookie = getCookie();
+    const cookie = getCookie('nav-at');
     if (cookie) {
       setCode(cookie);
     } else {

@@ -1,10 +1,18 @@
 import React from 'react';
 import Nav from './Nav';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import apiFunc from '../api/api';
 import music from '../assets/images/music.jpg';
 import random from '../assets/images/random.jpg';
 import '../assets/style/Main.css';
 
-export default function Main() {
+const { featureArtist } = apiFunc;
+
+function Main({ code }) {
+
+  featureArtist(code).then(response => console.log(response));
+
   return (
     <div className="Main">
       <Nav />
@@ -19,3 +27,17 @@ export default function Main() {
     </div>
   );
 }
+
+Main.propTypes = {
+  code: PropTypes.string,
+};
+
+Main.defaultProps = {
+  code: null,
+};
+
+const mapStateToProps = ({ codeReducer: code }) => ({
+  code,
+});
+
+export default connect(mapStateToProps)(Main);
