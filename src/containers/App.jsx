@@ -8,8 +8,8 @@ import {
 import { CircularProgress } from '@material-ui/core';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Welcome from '../components/Welcome';
-import Main from '../components/Main';
+import Welcome from './Welcome';
+import Main from './Main';
 import apiFn from '../api/api';
 import actions from '../actions/index';
 import getCode from '../helpers/auth_code';

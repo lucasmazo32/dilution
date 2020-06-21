@@ -1,6 +1,8 @@
 const action = {
   SET_CODE: 'SET CODE',
   DELETE_CODE: 'DELETE CODE',
+  SET_TRACK: 'SET TRACK',
+  DELETE_TRACK: 'DELETE TRACK',
 };
 
 const setCode = (code) => ({
@@ -9,7 +11,18 @@ const setCode = (code) => ({
 });
 
 const deleteCode = () => ({
-  type: action.SET_CODE,
+  type: action.DELETE_CODE,
 });
 
-export default { action, setCode, deleteCode };
+const setTrack = (track) => ({
+  type: action.SET_TRACK,
+  payload: track,
+});
+
+const deleteTrack = () => ({
+  type: action.DELETE_TRACK,
+});
+
+export default { 
+  action, setCode, deleteCode, setTrack, deleteTrack,
+};
