@@ -60,19 +60,173 @@
 .Main .player .player-info .bar {
   display: block;
   margin: 0 2px;
-  border-radius: 3.75px;
   width: 7.5px;
   height: 10px;
   background-color: white;
+  -webkit-transform: all 0.5s ease;
+          transform: all 0.5s ease;
 }
 
 .Main .player .player-info .bars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
   margin: 0 auto;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.player.playing .bar-1 {
+  -webkit-animation: anim-1 0.7s ease;
+          animation: anim-1 0.7s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.player.playing .bar-2 {
+  -webkit-animation: anim-2 0.58s ease;
+          animation: anim-2 0.58s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.player.playing .bar-3 {
+  -webkit-animation: anim-1 0.6s ease;
+          animation: anim-1 0.6s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.2;
+          animation-delay: 0.2;
+}
+
+.player.playing .bar-4 {
+  -webkit-animation: anim-2 0.59s ease;
+          animation: anim-2 0.59s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.player.playing .bar-5 {
+  -webkit-animation: anim-1 0.65s ease;
+          animation: anim-1 0.65s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+@-webkit-keyframes anim-1 {
+  0% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+  20% {
+    -webkit-transform: scaleY(0.8);
+            transform: scaleY(0.8);
+  }
+  40% {
+    -webkit-transform: scaleY(2.5);
+            transform: scaleY(2.5);
+  }
+  60% {
+    -webkit-transform: scaleY(3);
+            transform: scaleY(3);
+  }
+  80% {
+    -webkit-transform: scaleY(2);
+            transform: scaleY(2);
+  }
+  100% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+}
+
+@keyframes anim-1 {
+  0% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+  20% {
+    -webkit-transform: scaleY(0.8);
+            transform: scaleY(0.8);
+  }
+  40% {
+    -webkit-transform: scaleY(2.5);
+            transform: scaleY(2.5);
+  }
+  60% {
+    -webkit-transform: scaleY(3);
+            transform: scaleY(3);
+  }
+  80% {
+    -webkit-transform: scaleY(2);
+            transform: scaleY(2);
+  }
+  100% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+}
+
+@-webkit-keyframes anim-2 {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  20% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  40% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  60% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  80% {
+    -webkit-transform: scaleY(1.4);
+            transform: scaleY(1.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes anim-2 {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  20% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  40% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  60% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  80% {
+    -webkit-transform: scaleY(1.4);
+            transform: scaleY(1.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
 }
 /*# sourceMappingURL=Main.css.map */

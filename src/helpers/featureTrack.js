@@ -2,7 +2,7 @@ import apiFunc from '../api/api';
 
 const { featureArtist, getTracks } = apiFunc;
 
-export default function featureTrack(code, setTrack) {
+export default function featureTrack(code, setTrack, setAudio) {
   let track;
   featureArtist(code).then(response => {
     const hyperRef = response.playlists.items[0].tracks.href;
@@ -14,6 +14,7 @@ export default function featureTrack(code, setTrack) {
         if (track.preview_url) {
           checker = false;
           setTrack(track);
+          setAudio(new Audio(track.preview_url));
         }
       }
     })
