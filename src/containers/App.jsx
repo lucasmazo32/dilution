@@ -10,13 +10,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Welcome from '../components/Welcome';
 import Main from '../components/Main';
+import apiFn from '../api/api';
 import actions from '../actions/index';
 import getCode from '../helpers/auth_code';
 import session from '../api/session';
 import '../assets/style/App.css';
 
-const { getCookie } = session;
-
+const { myData, refreshToken } = apiFn;
+const { getCookie, setCookie } = session;
 const { setCode } = actions;
 
 function App({ code, setCode }) {
@@ -24,9 +25,19 @@ function App({ code, setCode }) {
 
   useEffect(() => {
     getCode();
-    const cookie = getCookie('nav-at');
-    if (cookie) {
-      setCode(cookie);
+    const atCookie = getCookie('nav-at');
+    if (atCookie) {
+      myData(atCookie).then(response => {
+        if (response.error) {
+          const url = window.location.href;
+          refreshToken(url).then(refreshResponse => {
+            setCookie(refreshResponse, 'nav-at');
+            setCode(refreshResponse);
+          });
+        } else {
+          setCode(atCookie);
+        }
+      })
     } else {
       history.push('/login');
     }

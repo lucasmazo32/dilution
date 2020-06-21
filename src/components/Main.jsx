@@ -10,7 +10,6 @@ import '../assets/style/Main.css';
 const { featureArtist } = apiFunc;
 
 function Main({ code }) {
-
   featureArtist(code).then(response => console.log(response));
 
   return (

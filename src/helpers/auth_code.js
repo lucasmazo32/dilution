@@ -13,13 +13,10 @@ const getCode = () => {
     const urlString = myUrl[0];
     const credentials = accessToken(code[0].slice(5), urlString.slice(0, urlString.length - 1));
     credentials.then(response => {
-      console.log(response);
-      console.log(response.access_token);
-      console.log(response.refresh_token);
       setCookie(response.access_token, 'nav-at');
       setCookie(response.refresh_token, 'nav-rt');
-    });
       window.location.replace(urlString.slice(0, urlString.length - 1));
+    });
     }
   }
 };
