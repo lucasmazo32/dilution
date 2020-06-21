@@ -5,7 +5,6 @@
     margin: 0 auto;
     margin-top: 15px;
     padding: 0;
-    // background-color: #1C75BC;
     .image {
       display: block;
       width: 100%;
@@ -19,6 +18,40 @@
       padding: 7.5px 0;
       font-size: 1.3rem;
       color: white;
+    }
+  }
+  .player {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #662D91;
+    .headphones {
+      margin-right: 10px;
+    }
+    .play {
+      margin-left: 5px;
+    }
+    .MuiCircularProgress-colorPrimary {
+      color: white;
+    }
+    .player-info {
+      color: white;
+      display: flex;
+      flex-flow: column;
+      .bar {
+        display: block;
+        margin: 0 2px;
+        border-radius: 3.75px;
+        width: 7.5px;
+        height: 10px;
+        background-color: white;
+      }
+      .bars {
+        display: flex;
+        margin: 0 auto;
+        width: max-content;
+      }
     }
   }
 }
