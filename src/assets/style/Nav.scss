@@ -1,9 +1,12 @@
 .Nav {
+  display: flex;
+  align-items: center;
   background-color: #1C75BC;
+  height: 10vh;
+  min-height: 70px;
   .discover {
     display: block;
     margin: 0 auto;
-    padding: 7.5px;
-    width: 45%;
+    height: 80%;
   }
 }

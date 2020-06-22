@@ -17,52 +17,65 @@ const { setTrack } = actions;
 
 function Main({ code, track, setTrack }) {
   const [audio, setAudio] = useState(null);
-  // const [playing, setPlaying] = useState(null);
   const [classPlayer, setClassPlayer] = useState('');
+
+  const audioPlaying = (e) => {
+    setClassPlayer('playing');
+  };
+
+  const audioPaused = (e) => {
+    setClassPlayer('');
+  };
 
   useEffect(() => {
     if (track === null) {
       featureTrack(code, setTrack, setAudio);
     }
-  }, [setTrack, code, track])
+    if (audio) {
+      audio.addEventListener('play', (event) => audioPlaying(event));
+      audio.addEventListener('pause', (event) => audioPaused(event));
+    }
+  }, [setTrack, code, track, audio])
 
   const trackName = (name) => {
     if (name.length > 28) {
       return name.slice(0, 28) + '...';
     }
     return name;
-  }
+  };
 
   const handlePlay = () => {
     if (audio.paused) {
       audio.play();
-      setClassPlayer('playing');
     } else {
       audio.pause();
-      setClassPlayer('');
     }
-  }
+  };
 
   return (
     <div className="Main">
       <Nav />
-      <button className={`btn player ${classPlayer}`} onClick={handlePlay}>
-        <Headphones className="headphones" />
-        { track ? 
-        <div className="player-info">
-          <span>{ trackName(track.name) }</span>
-          <div className="bars">
-            <span className="bar bar-1"></span>
-            <span className="bar bar-2"></span>
-            <span className="bar bar-3"></span>
-            <span className="bar bar-4"></span>
-            <span className="bar bar-5"></span>
+      <div className="main-container">
+        <button className="btn btn-main" onClick={handlePlay}>
+          <div className={`player ${classPlayer}`}>
+            <Headphones className="headphones" />
+            { track ? 
+            <div className="player-info">
+              <span>{ trackName(track.name) }</span>
+              <div className="bars">
+                <span className="bar bar-1"></span>
+                <span className="bar bar-2"></span>
+                <span className="bar bar-3"></span>
+                <span className="bar bar-4"></span>
+                <span className="bar bar-5"></span>
+              </div>
+            </div> : <CircularProgress /> }
+            { audio ? (audio.paused ? <Play className="play" /> : <Pause className="play" />) : null }
           </div>
-        </div> : <CircularProgress /> }
-        { audio ? (audio.paused ? <Play className="play" /> : <Pause className="play" />) : null }
-      </button>
-      <DiscoverBlock image={music} name="Trending" />
-      <DiscoverBlock image={random} name="Random" />
+        </button>
+        <DiscoverBlock image={music} name="Trending" />
+        <DiscoverBlock image={random} name="Random" />
+      </div>
     </div>
   );
 }

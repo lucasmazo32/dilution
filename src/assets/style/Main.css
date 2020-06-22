@@ -1,8 +1,36 @@
+.Main .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  min-height: 120vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.Main .volume-tag {
+  color: white;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin-top: 5px;
+}
+
+.Main .MuiSlider-root {
+  color: white;
+  padding: 3px 0;
+}
+
 .Main .discover-block {
   display: block;
   width: 80%;
   margin: 0 auto;
-  margin-top: 15px;
   padding: 0;
 }
 
@@ -29,9 +57,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
-  margin-top: 10px;
-  background-color: #662D91;
 }
 
 .Main .player .headphones {
@@ -79,6 +104,12 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.btn-main {
+  display: block;
+  margin: 0 auto;
+  background-color: #662D91;
 }
 
 .player.playing .bar-1 {

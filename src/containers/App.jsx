@@ -44,7 +44,7 @@ function App({ code, setCode }) {
   }, [setCode, history]);
 
   return (
-    <div>
+    <div className="App">
       <Switch>
         <Route exact path="/">
           { code ? <Main /> : <div className="app-progress"><CircularProgress /></div> }

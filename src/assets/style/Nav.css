@@ -1,11 +1,18 @@
 .Nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #1C75BC;
+  height: 10vh;
+  min-height: 70px;
 }
 
 .Nav .discover {
   display: block;
   margin: 0 auto;
-  padding: 7.5px;
-  width: 45%;
+  height: 80%;
 }
 /*# sourceMappingURL=Nav.css.map */

@@ -1,9 +1,27 @@
 .Main {
+  .main-container {
+    display: flex;
+    height: 90vh;
+    min-height: 120vw;
+    flex-flow: column;
+    justify-content: space-evenly;
+  }
+  .volume-tag {
+    color: white;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+  }
+  .MuiSlider-root {
+    color: white;
+    padding: 3px 0;
+  }
   .discover-block {
     display: block;
     width: 80%;
     margin: 0 auto;
-    margin-top: 15px;
     padding: 0;
     .image {
       display: block;
@@ -23,9 +41,6 @@
   .player {
     display: flex;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: #662D91;
     .headphones {
       margin-right: 10px;
     }
@@ -56,6 +71,12 @@
       }
     }
   }
+}
+
+.btn-main {
+  display: block;
+  margin: 0 auto;
+  background-color: #662D91;
 }
 
 .player.playing {
