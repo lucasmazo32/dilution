@@ -12,5 +12,13 @@
   }
   .back {
     position: absolute;
+    pointer-events: inherit;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .back.closed {
+    transform: translateX(-20px);
+    opacity: 0;
+    pointer-events: none;
   }
 }
