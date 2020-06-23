@@ -23,7 +23,7 @@ function Trending({ code }) {
         console.log(element);
         return (
           <button className="playlist-container btn" key={element.id}>
-            <div className="image-container" style={{ backgroundImage: `url(${element.images[0].url})`, backgroundSize: 'cover' }} />
+            { element.images[0] ? <div className="image-container" style={{ backgroundImage: `url(${element.images[0].url})`, backgroundSize: 'cover' }} /> : <div className="image-container" style={{ backgroundImage: `url(${trendigImg})`, backgroundSize: 'cover' }} /> }
             <span>{ element.name }</span>
           </button>
         )
