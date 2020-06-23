@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Welcome from './Welcome';
 import Trending from './Trending';
+import Random from './Random';
 import Main from './Main';
 import Nav from '../components/Nav';
 import apiFn from '../api/api';
@@ -57,6 +58,9 @@ function App({ code, setCode }) {
         </Route>
         <Route path="/trending">
           <Trending />
+        </Route>
+        <Route path="/random">
+          <Random />
         </Route>
       </Switch>
     </div>

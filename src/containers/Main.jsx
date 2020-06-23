@@ -31,6 +31,8 @@ function Main({ code, track, setTrack }) {
   useEffect(() => {
     if (track === null) {
       featureTrack(code, setTrack, setAudio);
+    } else if (audio === null) {
+      setAudio(new Audio(track.preview_url));
     }
     if (audio) {
       audio.addEventListener('play', (event) => audioPlaying(event));
@@ -53,6 +55,16 @@ function Main({ code, track, setTrack }) {
     }
   };
 
+  const handleTrending = () => {
+    audio.pause();
+    history.push('/trending');
+  };
+
+  const handleRandom = () => {
+    audio.pause();
+    history.push('/random');
+  };
+
   return (
     <div className="Main">
       <div className="main-container">
@@ -73,8 +85,8 @@ function Main({ code, track, setTrack }) {
             { audio ? (audio.paused ? <Play className="play" /> : <Pause className="play" />) : null }
           </div>
         </button>
-        <DiscoverBlock onClick={() => history.push('/trending')} image={music} name="Trending" />
-        <DiscoverBlock onClick={() => history.push('/random')} image={random} name="Random" />
+        <DiscoverBlock onClick={handleTrending} image={music} name="Trending" />
+        <DiscoverBlock onClick={handleRandom} image={random} name="Random" />
       </div>
     </div>
   );
