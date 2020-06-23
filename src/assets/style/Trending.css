@@ -1,3 +1,7 @@
+.Trending {
+  position: relative;
+}
+
 .cover-img {
   height: 15vh;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
@@ -13,6 +17,8 @@
   margin: 1rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .playlist-container .image-container {
@@ -29,7 +35,98 @@
   border-bottom-right-radius: 0.25rem;
 }
 
+.playlist-container.closed:nth-of-type(odd) {
+  -webkit-transform: translateX(-40vw);
+          transform: translateX(-40vw);
+  opacity: 0;
+}
+
+.playlist-container.closed:nth-of-type(even) {
+  -webkit-transform: translateX(40vw);
+          transform: translateX(40vw);
+  opacity: 0;
+}
+
+.playlist-container.closed:nth-of-type(2) {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.playlist-container.closed:nth-of-type(3) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.playlist-container.closed:nth-of-type(4) {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
 .options-container {
+  position: relative;
+  z-index: 2;
   margin-top: calc((75vh - 8rem - 80vw)/2);
+}
+
+.options-container.closed {
+  pointer-events: none;
+}
+
+.tracks-container {
+  position: absolute;
+  opacity: 0;
+  top: 15vh;
+  z-index: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tracks-container .btn-back {
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
+  border-radius: 0 1rem 1rem 0;
+  background-color: #1c75bc;
+  margin-top: 1rem;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tracks-container .btn-back span {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+  height: 24px;
+}
+
+.tracks-container.closed {
+  opacity: 1;
+}
+
+.tracks-container.closed .btn-back {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.list-tracks {
+  background-color: #1c75bc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.list-tracks .btn {
+  color: white;
+}
+
+.list-tracks.closed {
+  pointer-events: inherit;
 }
 /*# sourceMappingURL=Trending.css.map */

@@ -8,4 +8,11 @@ function getPlaylists(code, setLists) {
   });
 }
 
-export default { getPlaylists }
+function playlistTracks(code, href, setTracks) {
+  getTracks(code, href).then(response => {
+    const myArray = response.items.filter(track => track.track.preview_url);
+    setTracks(myArray.slice(0, 10));
+  });
+}
+
+export default { getPlaylists, playlistTracks }

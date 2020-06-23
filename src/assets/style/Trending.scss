@@ -1,3 +1,7 @@
+.Trending {
+  position: relative;
+}
+
 .cover-img {
   height: 15vh;
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
@@ -11,6 +15,7 @@
   margin: 1rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  transition: all 0.5s ease;
   .image-container {
     padding: 40%;
   }
@@ -25,6 +30,77 @@
   }
 }
 
+.playlist-container.closed {
+  &:nth-of-type(odd) {
+    transform: translateX(-40vw);
+    opacity: 0;
+  }
+  &:nth-of-type(even) {
+    transform: translateX(40vw);
+    opacity: 0;
+  }
+  &:nth-of-type(2) {
+    transition-delay: 0.15s;
+  }
+  &:nth-of-type(3) {
+    transition-delay: 0.3s;
+  }
+  &:nth-of-type(4) {
+    transition-delay: 0.45s;
+  }
+}
+
 .options-container {
+  position: relative;
+  z-index: 2;
   margin-top: calc((75vh - 8rem - 80vw)/2);
+}
+
+.options-container.closed {
+  pointer-events: none;
+}
+
+.tracks-container {
+  position: absolute;
+  opacity: 0;
+  top: 15vh;
+  z-index: 0;
+  transition: all 0.5s ease;
+  .btn-back {
+    transform: translateX(-50vw);
+    border-radius: 0 1rem 1rem 0;
+    background-color: rgba(28,117,188,1);
+    margin-top: 1rem;
+    color: white;
+    transition: all 0.5s ease;
+    span {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.tracks-container.closed {
+  opacity: 1;
+  .btn-back {
+    transform: translateX(0);
+  }
+}
+
+.list-tracks {
+  background-color: rgba(28,117,188,1);
+  display: flex;
+  flex-flow: column;
+  border-radius: 0.5rem;
+  pointer-events: none;
+  .btn {
+    color: white;
+  }
+}
+
+.list-tracks.closed {
+  pointer-events: inherit;
 }
