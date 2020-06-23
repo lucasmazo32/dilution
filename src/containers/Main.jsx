@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Nav from '../components/Nav';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import featureTrack from '../helpers/featureTrack';
 import { ReactComponent as Headphones } from '../assets/images/headphones.svg';
@@ -16,6 +16,7 @@ import { CircularProgress } from '@material-ui/core';
 const { setTrack } = actions;
 
 function Main({ code, track, setTrack }) {
+  const history = useHistory();
   const [audio, setAudio] = useState(null);
   const [classPlayer, setClassPlayer] = useState('');
 
@@ -54,7 +55,6 @@ function Main({ code, track, setTrack }) {
 
   return (
     <div className="Main">
-      <Nav />
       <div className="main-container">
         <button className="btn btn-main" onClick={handlePlay}>
           <div className={`player ${classPlayer}`}>
@@ -73,8 +73,8 @@ function Main({ code, track, setTrack }) {
             { audio ? (audio.paused ? <Play className="play" /> : <Pause className="play" />) : null }
           </div>
         </button>
-        <DiscoverBlock image={music} name="Trending" />
-        <DiscoverBlock image={random} name="Random" />
+        <DiscoverBlock onClick={() => history.push('/trending')} image={music} name="Trending" />
+        <DiscoverBlock onClick={() => history.push('/random')} image={random} name="Random" />
       </div>
     </div>
   );
