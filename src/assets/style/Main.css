@@ -1,0 +1,289 @@
+.Main .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  min-height: 120vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.Main .volume-tag {
+  color: white;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin-top: 5px;
+}
+
+.Main .MuiSlider-root {
+  color: white;
+  padding: 3px 0;
+}
+
+.Main .discover-block {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Main .discover-block .image {
+  display: block;
+  width: 100%;
+  padding-bottom: 50%;
+}
+
+.Main .discover-block .text {
+  display: block;
+  background-color: #1C75BC;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  padding: 7.5px 0;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.Main .player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Main .player .headphones {
+  margin-right: 10px;
+}
+
+.Main .player .play {
+  margin-left: 5px;
+}
+
+.Main .player .MuiCircularProgress-colorPrimary {
+  color: white;
+}
+
+.Main .player .player-info {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.Main .player .player-info .bar {
+  display: block;
+  margin: 0 2px;
+  width: 7.5px;
+  height: 10px;
+  background-color: white;
+  -webkit-transform: all 0.5s ease;
+          transform: all 0.5s ease;
+}
+
+.Main .player .player-info .bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  margin: 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0 0.25rem 0.25rem 0;
+  border-left: 1px white solid;
+  background-color: #662D91;
+}
+
+.btn-main {
+  display: block;
+  border-radius: 0.25rem 0 0 0.25rem;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  background-color: #662D91;
+}
+
+.player.playing .bar-1 {
+  -webkit-animation: anim-1 0.7s ease;
+          animation: anim-1 0.7s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.player.playing .bar-2 {
+  -webkit-animation: anim-2 0.58s ease;
+          animation: anim-2 0.58s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.player.playing .bar-3 {
+  -webkit-animation: anim-1 0.6s ease;
+          animation: anim-1 0.6s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.2;
+          animation-delay: 0.2;
+}
+
+.player.playing .bar-4 {
+  -webkit-animation: anim-2 0.59s ease;
+          animation: anim-2 0.59s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.player.playing .bar-5 {
+  -webkit-animation: anim-1 0.65s ease;
+          animation: anim-1 0.65s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+@-webkit-keyframes anim-1 {
+  0% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+  20% {
+    -webkit-transform: scaleY(0.8);
+            transform: scaleY(0.8);
+  }
+  40% {
+    -webkit-transform: scaleY(2.5);
+            transform: scaleY(2.5);
+  }
+  60% {
+    -webkit-transform: scaleY(3);
+            transform: scaleY(3);
+  }
+  80% {
+    -webkit-transform: scaleY(2);
+            transform: scaleY(2);
+  }
+  100% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+}
+
+@keyframes anim-1 {
+  0% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+  20% {
+    -webkit-transform: scaleY(0.8);
+            transform: scaleY(0.8);
+  }
+  40% {
+    -webkit-transform: scaleY(2.5);
+            transform: scaleY(2.5);
+  }
+  60% {
+    -webkit-transform: scaleY(3);
+            transform: scaleY(3);
+  }
+  80% {
+    -webkit-transform: scaleY(2);
+            transform: scaleY(2);
+  }
+  100% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+}
+
+@-webkit-keyframes anim-2 {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  20% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  40% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  60% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  80% {
+    -webkit-transform: scaleY(1.4);
+            transform: scaleY(1.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes anim-2 {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  20% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  40% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  60% {
+    -webkit-transform: scaleY(1.8);
+            transform: scaleY(1.8);
+  }
+  80% {
+    -webkit-transform: scaleY(1.4);
+            transform: scaleY(1.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+/*# sourceMappingURL=Main.css.map */
