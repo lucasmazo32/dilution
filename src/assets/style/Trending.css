@@ -101,6 +101,7 @@
 }
 
 .tracks-container.closed {
+  width: 100%;
   opacity: 1;
 }
 
@@ -110,6 +111,10 @@
 }
 
 .list-tracks {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 1rem auto 0 auto;
   background-color: #1c75bc;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,7 +128,9 @@
 }
 
 .list-tracks .btn {
+  border-radius: 0;
   color: white;
+  text-align: left;
 }
 
 .list-tracks.closed {

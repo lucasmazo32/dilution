@@ -84,6 +84,7 @@
 }
 
 .tracks-container.closed {
+  width: 100%;
   opacity: 1;
   .btn-back {
     transform: translateX(0);
@@ -91,13 +92,17 @@
 }
 
 .list-tracks {
+  width: max-content;
+  margin: 1rem auto 0 auto;
   background-color: rgba(28,117,188,1);
   display: flex;
   flex-flow: column;
   border-radius: 0.5rem;
   pointer-events: none;
   .btn {
+    border-radius: 0;
     color: white;
+    text-align: left;
   }
 }
 
