@@ -20,3 +20,11 @@ body {
   display: block;
   margin: 20px auto;
 }
+
+.center-white {
+  .MuiCircularProgress-colorPrimary {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    color: white;
+  }
+}

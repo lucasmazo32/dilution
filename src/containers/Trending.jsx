@@ -85,7 +85,6 @@ function Trending({ code, setTrack }) {
 
   const renderTracks = () => {
     return listTracks.map(track => {
-      console.log(track);
       return (
         <div className="single-track-container" key={track.track.id}>
           <button onClick={() => handlePlay(track.track.id)} className="btn btn-track">
@@ -110,7 +109,7 @@ function Trending({ code, setTrack }) {
           <span>{ playlist ? playlist.name : '' }</span>
         </button>
         <div className={`list-tracks${classClosed}`}>
-          { listTracks ? renderTracks() : null }
+          { listTracks ? renderTracks() : <div className="center-circular center-white"><CircularProgress /></div> }
         </div>
       </div>
     </div>

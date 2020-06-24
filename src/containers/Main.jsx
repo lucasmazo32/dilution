@@ -40,8 +40,8 @@ function Main({ code }) {
   }, [setTrack, code, track, audio])
 
   const trackName = (name) => {
-    if (name.length > 28) {
-      return name.slice(0, 28) + '...';
+    if (name.length > 25) {
+      return name.slice(0, 25) + '...';
     }
     return name;
   };
