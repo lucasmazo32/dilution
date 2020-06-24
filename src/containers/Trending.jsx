@@ -6,6 +6,7 @@ import actions from '../actions/index';
 import { ReactComponent as Back } from '../assets/images/back.svg';
 import { ReactComponent as Play } from '../assets/images/play.svg';
 import { ReactComponent as Pause } from '../assets/images/pause.svg';
+import { ReactComponent as Open } from '../assets/images/open.svg';
 import trendigImg from '../assets/images/music.jpg';
 import trendingFn from '../helpers/trending';
 import '../assets/style/Trending.css';
@@ -84,11 +85,17 @@ function Trending({ code, setTrack }) {
 
   const renderTracks = () => {
     return listTracks.map(track => {
+      console.log(track);
       return (
-        <button onClick={() => handlePlay(track.track.id)} className="btn" key={track.track.id}>
-          { nowPlaying === track.track.id ? <Pause /> : <Play /> }
-          <span>{ track.track.name.length > 27 ? `${track.track.name.slice(0, 27)}...` : track.track.name }</span>
-        </button>
+        <div className="single-track-container" key={track.track.id}>
+          <button onClick={() => handlePlay(track.track.id)} className="btn btn-track">
+            { nowPlaying === track.track.id ? <Pause /> : <Play /> }
+            <span>{ track.track.name.length > 27 ? `${track.track.name.slice(0, 27)}...` : track.track.name }</span>
+          </button>
+          <a className="btn open-trending" href={track.track.uri}>
+            <Open />
+          </a>
+        </div>
       )
     })
   };

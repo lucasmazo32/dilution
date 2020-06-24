@@ -75,9 +75,22 @@
   }
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.open {
+  display: flex;
+  align-items: center;
+  border-radius:  0 0.25rem 0.25rem 0;
+  border-left: 1px white solid;
+  background-color: #662D91;
+}
+
 .btn-main {
   display: block;
-  margin: 0 auto;
+  border-radius: 0.25rem 0 0 0.25rem;
   box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
   background-color: #662D91;
 }

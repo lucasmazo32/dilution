@@ -6,6 +6,7 @@ import featureTrack from '../helpers/featureTrack';
 import { ReactComponent as Headphones } from '../assets/images/headphones.svg';
 import { ReactComponent as Play } from '../assets/images/play.svg';
 import { ReactComponent as Pause } from '../assets/images/pause.svg';
+import { ReactComponent as Open } from '../assets/images/open.svg';
 import music from '../assets/images/music.jpg';
 import random from '../assets/images/random.jpg';
 import '../assets/style/Main.css';
@@ -66,23 +67,28 @@ function Main({ code }) {
   return (
     <div className="Main">
       <div className="main-container">
-        <button className="btn btn-main" onClick={handlePlay}>
-          <div className={`player ${classPlayer}`}>
-            <Headphones className="headphones" />
-            { track ? 
-            <div className="player-info">
-              <span>{ trackName(track.name) }</span>
-              <div className="bars">
-                <span className="bar bar-1"></span>
-                <span className="bar bar-2"></span>
-                <span className="bar bar-3"></span>
-                <span className="bar bar-4"></span>
-                <span className="bar bar-5"></span>
-              </div>
-            </div> : <CircularProgress /> }
-            { audio ? (audio.paused ? <Play className="play" /> : <Pause className="play" />) : null }
-          </div>
-        </button>
+        <div className="btn-container">
+          <button className="btn btn-main" onClick={handlePlay}>
+            <div className={`player ${classPlayer}`}>
+              <Headphones className="headphones" />
+              { track ? 
+              <div className="player-info">
+                <span>{ trackName(track.name) }</span>
+                <div className="bars">
+                  <span className="bar bar-1"></span>
+                  <span className="bar bar-2"></span>
+                  <span className="bar bar-3"></span>
+                  <span className="bar bar-4"></span>
+                  <span className="bar bar-5"></span>
+                </div>
+              </div> : <CircularProgress /> }
+              { audio ? (audio.paused ? <Play className="play" /> : <Pause className="play" />) : null }
+            </div>
+          </button>
+          { track ? <a href={track.uri} className="open btn">
+            <Open />
+          </a> : null}
+        </div>
         <DiscoverBlock onClick={handleTrending} image={music} name="Trending" />
         <DiscoverBlock onClick={handleRandom} image={random} name="Random" />
       </div>
