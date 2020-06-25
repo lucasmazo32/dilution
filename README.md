@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+* [About the Project](#about-the-project)
+* [Live version](#live-version)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+<!-- about-the-project -->
+# About the project
 
-### `npm start`
+Are you the kind of person who repeats the same songs day after day? Why would you continue to do so?
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Dilution is a project that lets you look to continually changing tracks. On the main screen, you will have a record that will change each time you visit it. You will also have a link to the trendiest songs and some random songs to discover something new. Be careful when you are on the random tracks! One wrong move, and you may not see that song again.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+If you enjoy a song, open it on Spotify!
 
-### `npm test`
+PS: You will need to have a Spotify account.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Live version
 
-### `npm run build`
+> [Here](https://5ef4bb1bce77554c957b455b--dilution.netlify.app)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built with
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Node v14.0.0
+- npm v6.14.5
+- React
+- Redux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting started
 
-### `npm run eject`
+To get a local copy up and running follow these simple steps.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone or fork the [repository](https://github.com/lucasmazo32/dilution).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After clonning and changing directory, run in your terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> ``` npm install ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To start the local server (webpack), run in your terminal:
 
-## Learn More
+> ``` npm start ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you want to build the production files for the project, run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> ``` npm run build ```
 
-### Code Splitting
+# License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+>  CC-BY-4.0 License 
 
-### Analyzing the Bundle Size
+# Contact
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Lucas Mazo:
 
-### Making a Progressive Web App
+- Twitter: [@lucasmazo32](https://twitter.com/lucasmazo32)
+- Github: [lucasmazo32](https://github.com/lucasmazo32)
+- LinkedIn: [Lucas Mazo](https://www.linkedin.com/in/lucasmazo/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# Acknowledgements
 
-### Advanced Configuration
+["listen to the music"](https://www.flickr.com/photos/159646476@N07/31766447948) by [make65](https://www.flickr.com/photos/159646476@N07) is licensed under CC BY 2.0 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+["Spiral of Marbles"](https://www.flickr.com/photos/37474593@N04/4334153803) by [FracturedPixel](https://www.flickr.com/photos/37474593@N04) is licensed under CC BY-NC-SA 2.0 

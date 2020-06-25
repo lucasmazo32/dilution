@@ -1,0 +1,10 @@
+.btn-replace {
+  display: block;
+  margin: 1rem auto 0 auto;
+  padding: 0.25rem;
+  background: linear-gradient(135deg, #1c75bc 0%, rgba(16, 145, 250, 0.8) 100%);
+  border-radius: 50%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+/*# sourceMappingURL=Random.css.map */

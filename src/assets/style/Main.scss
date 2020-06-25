@@ -1,0 +1,164 @@
+.Main {
+  .main-container {
+    display: flex;
+    height: 90vh;
+    min-height: 120vw;
+    flex-flow: column;
+    justify-content: space-evenly;
+  }
+  .volume-tag {
+    color: white;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+  }
+  .MuiSlider-root {
+    color: white;
+    padding: 3px 0;
+  }
+  .discover-block {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.2);
+    .image {
+      display: block;
+      width: 100%;
+      padding-bottom: 50%;
+    }
+    .text {
+      display: block;
+      background-color: #1C75BC;
+      border-bottom-left-radius: 7.5px;
+      border-bottom-right-radius: 7.5px;
+      padding: 7.5px 0;
+      font-size: 1.3rem;
+      color: white;
+    }
+  }
+  .player {
+    display: flex;
+    align-items: center;
+    .headphones {
+      margin-right: 10px;
+    }
+    .play {
+      margin-left: 5px;
+    }
+    .MuiCircularProgress-colorPrimary {
+      color: white;
+    }
+    .player-info {
+      color: white;
+      display: flex;
+      flex-flow: column;
+      .bar {
+        display: block;
+        margin: 0 2px;
+        width: 7.5px;
+        height: 10px;
+        background-color: white;
+        transform: all 0.5s ease;
+      }
+      .bars {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        margin: 0 auto;
+        width: max-content;
+      }
+    }
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.open {
+  display: flex;
+  align-items: center;
+  border-radius:  0 0.25rem 0.25rem 0;
+  border-left: 1px white solid;
+  background-color: #662D91;
+}
+
+.btn-main {
+  display: block;
+  border-radius: 0.25rem 0 0 0.25rem;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+  background-color: #662D91;
+}
+
+.player.playing {
+  .bar-1 {
+    animation: anim-1 0.7s ease;
+    animation-iteration-count: infinite;
+  }
+  .bar-2 {
+    animation: anim-2 0.58s ease;
+    animation-iteration-count: infinite;
+  }
+  .bar-3 {
+    animation: anim-1 0.6s ease;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2;
+  }
+  .bar-4 {
+    animation: anim-2 0.59s ease;
+    animation-iteration-count: infinite;
+    animation-delay: 0.25s;
+  }
+  .bar-5 {
+    animation: anim-1 0.65s ease;
+    animation-iteration-count: infinite;
+    animation-delay: 0.25s;
+  }
+}
+
+@keyframes anim-1 {
+  0% {
+    transform: scaleY(1.5);
+  }
+  20% {
+    transform: scaleY(0.8);
+  }
+  40% {
+    transform: scaleY(2.5);
+  }
+  60% {
+    transform: scaleY(3);
+  }
+  80% {
+    transform: scaleY(2);
+  }
+  100% {
+    transform: scaleY(1.5);
+  }
+}
+
+@keyframes anim-2 {
+  0% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: scaleY(1.8);
+  }
+  40% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(1.8);
+  }
+  80% {
+    transform: scaleY(1.4);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

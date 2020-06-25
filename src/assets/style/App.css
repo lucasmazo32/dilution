@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-image: url(../images/background.svg);
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.center-circular {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: block;
+  margin: 20px auto;
+}
+
+.center-white .MuiCircularProgress-colorPrimary {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  color: white;
+}
+/*# sourceMappingURL=App.css.map */
