@@ -54,6 +54,9 @@
   position: relative;
   z-index: 2;
   margin-top: calc((75vh - 8rem - 80vw)/2);
+  @media screen and (min-width: 500px) {
+    margin-top: 1rem;
+  }
 }
 
 .options-container.closed {
