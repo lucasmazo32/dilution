@@ -21,7 +21,7 @@ PS: You will need to have a Spotify account.
 
 ## Live version
 
-> [Here]()
+> [Here](https://5ef4bb1bce77554c957b455b--dilution.netlify.app)
 
 ## Built with
 
@@ -50,7 +50,7 @@ If you want to build the production files for the project, run:
 
 # License
 
-> CC BY
+>  CC-BY-4.0 License 
 
 # Contact
 

@@ -25,3 +25,7 @@ yarn-error.log*
 # API info
 
 src/api/*
+
+# netlify 
+
+.netlify
