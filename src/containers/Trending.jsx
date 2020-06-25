@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -28,14 +29,14 @@ function Trending({ code, setTrack }) {
     }
     if (listTracks) {
       listTracks.forEach((track) => {
-          audios[track.track.id] = new Audio(track.track.preview_url);
-          audios[track.track.id].addEventListener('ended', () => {
-            setNowPlaying(null);
-            setTrack(null);
-          });
+        audios[track.track.id] = new Audio(track.track.preview_url);
+        audios[track.track.id].addEventListener('ended', () => {
+          setNowPlaying(null);
+          setTrack(null);
+        });
       });
     }
-  }, [code, listTracks, audios, setTrack])
+  }, [code, listTracks, audios, setTrack]);
 
   const handleClick = (myplaylist) => {
     setPlaylist(myplaylist);
@@ -53,18 +54,14 @@ function Trending({ code, setTrack }) {
     setClassClosed('');
   };
 
-  const handleListRender = () => {
-    return (
-      lists.map(element => {
-        return (
-          <button className={`btn playlist-container${classClosed}`} key={element.id} onClick={() => handleClick(element)}>
-            { element.images[0] ? <div className="image-container" style={{ backgroundImage: `url(${element.images[0].url})`, backgroundSize: 'cover' }} /> : <div className="image-container" style={{ backgroundImage: `url(${trendigImg})`, backgroundSize: 'cover' }} /> }
-            <span>{ element.name.length > 12 ? `${element.name.slice(0, 11)}...` : element.name }</span>
-          </button>
-        )
-      })
-    )
-  };
+  const handleListRender = () => (
+    lists.map((element) => (
+      <button type="button" className={`btn playlist-container${classClosed}`} key={element.id} onClick={() => handleClick(element)}>
+        { element.images[0] ? <div className="image-container" style={{ backgroundImage: `url(${element.images[0].url})`, backgroundSize: 'cover' }} /> : <div className="image-container" style={{ backgroundImage: `url(${trendigImg})`, backgroundSize: 'cover' }} /> }
+        <span>{ element.name.length > 12 ? `${element.name.slice(0, 11)}...` : element.name }</span>
+      </button>
+    ))
+  );
 
   const handlePlay = (id) => {
     if (nowPlaying === null) {
@@ -83,28 +80,24 @@ function Trending({ code, setTrack }) {
     }
   };
 
-  const renderTracks = () => {
-    return listTracks.map(track => {
-      return (
-        <div className="single-track-container" key={track.track.id}>
-          <button onClick={() => handlePlay(track.track.id)} className="btn btn-track">
-            { nowPlaying === track.track.id ? <Pause /> : <Play /> }
-            <span>{ track.track.name.length > 27 ? `${track.track.name.slice(0, 27)}...` : track.track.name }</span>
-          </button>
-          <a className="btn open-trending" href={track.track.uri}>
-            <Open />
-          </a>
-        </div>
-      )
-    })
-  };
+  const renderTracks = () => listTracks.map((track) => (
+    <div className="single-track-container" key={track.track.id}>
+      <button type="button" onClick={() => handlePlay(track.track.id)} className="btn btn-track">
+        { nowPlaying === track.track.id ? <Pause /> : <Play /> }
+        <span>{ track.track.name.length > 27 ? `${track.track.name.slice(0, 27)}...` : track.track.name }</span>
+      </button>
+      <a className="btn open-trending" href={track.track.uri}>
+        <Open />
+      </a>
+    </div>
+  ));
 
   return (
     <div className="Trending">
       <div className="cover-img" style={{ backgroundImage: `url(${trendigImg})`, backgroundSize: 'cover' }} />
-      { lists ? <div className={`options-container${classClosed}`}>{handleListRender()}</div>  : <div className="center-circular"><CircularProgress /></div> }
+      { lists ? <div className={`options-container${classClosed}`}>{handleListRender()}</div> : <div className="center-circular"><CircularProgress /></div> }
       <div className={`tracks-container${classClosed}`}>
-        <button className="btn btn-back" onClick={handleBack}>
+        <button type="button" className="btn btn-back" onClick={handleBack}>
           <Back />
           <span>{ playlist ? playlist.name : '' }</span>
         </button>
@@ -113,7 +106,7 @@ function Trending({ code, setTrack }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 Trending.propTypes = {
@@ -125,7 +118,7 @@ Trending.defaultProps = {
   code: null,
 };
 
-const mapStateToProps = ({ codeReducer: code, trackReducer: track }) => ({
+const mapStateToProps = ({ codeReducer: code }) => ({
   code,
 });
 

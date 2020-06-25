@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -24,7 +25,7 @@ function Nav({ track, setTrack }) {
     } else {
       setBackClass('');
     }
-  }, [location.pathname, setTrack, track])
+  }, [location.pathname, setTrack, track]);
 
   const handleClick = () => {
     history.push('/');
@@ -36,7 +37,7 @@ function Nav({ track, setTrack }) {
 
   return (
     <nav className="Nav">
-      <button onClick={handleClick} className={`btn back ${backClass}`}>
+      <button type="button" onClick={handleClick} className={`btn back ${backClass}`}>
         <Back />
       </button>
       <Logo className="discover" />
@@ -45,12 +46,12 @@ function Nav({ track, setTrack }) {
 }
 
 Nav.propTypes = {
-  code: PropTypes.string,
   setTrack: PropTypes.func.isRequired,
+  track: PropTypes.objectOf(PropTypes.any),
 };
 
 Nav.defaultProps = {
-  code: null,
+  track: null,
 };
 
 const mapStateToProps = ({ trackReducer: track }) => ({

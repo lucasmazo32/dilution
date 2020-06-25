@@ -10,13 +10,13 @@ const getCode = () => {
   if (code) {
     const myUrl = url.match(/.+\?/);
     if (myUrl) {
-    const urlString = myUrl[0];
-    const credentials = accessToken(code[0].slice(5), urlString.slice(0, urlString.length - 1));
-    credentials.then(response => {
-      setCookie(response.access_token, 'nav-at');
-      setCookie(response.refresh_token, 'nav-rt');
-      window.location.replace(urlString.slice(0, urlString.length - 1));
-    });
+      const urlString = myUrl[0];
+      const credentials = accessToken(code[0].slice(5), urlString.slice(0, urlString.length - 1));
+      credentials.then((response) => {
+        setCookie(response.access_token, 'nav-at');
+        setCookie(response.refresh_token, 'nav-rt');
+        window.location.replace(urlString.slice(0, urlString.length - 1));
+      });
     }
   }
 };

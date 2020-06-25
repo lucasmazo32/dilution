@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -32,9 +33,9 @@ function Random({ code, setTrack }) {
           setNowPlaying(null);
           setTrack(null);
         });
-    });
+      });
     }
-  }, [code, tracks, setTrack, audios])
+  }, [code, tracks, setTrack, audios]);
 
   const handlePlay = (id) => {
     if (nowPlaying === null) {
@@ -64,38 +65,37 @@ function Random({ code, setTrack }) {
     randomTracks(code, setTracks, setLoading);
   };
 
-  const renderTracks = () => {
-    return tracks.map(track => {
-      return (
-        <div className="single-track-container" key={track.id}>
-          <button onClick={() => handlePlay(track.id)} className="btn btn-track">
-            { nowPlaying === track.id ? <Pause /> : <Play /> }
-            <span>{ track.name.length > 27 ? `${track.name.slice(0, 27)}...` : track.name }</span>
-          </button>
-          <a className="btn open-trending" href={track.uri}>
-            <Open />
-          </a>
-        </div>
-      )
-    })
-  };
+  const renderTracks = () => tracks.map((track) => (
+    <div className="single-track-container" key={track.id}>
+      <button type="button" onClick={() => handlePlay(track.id)} className="btn btn-track">
+        { nowPlaying === track.id ? <Pause /> : <Play /> }
+        <span>{ track.name.length > 27 ? `${track.name.slice(0, 27)}...` : track.name }</span>
+      </button>
+      <a className="btn open-trending" href={track.uri}>
+        <Open />
+      </a>
+    </div>
+  ));
 
   return (
     <div className="Random">
       <div className="cover-img" style={{ backgroundImage: `url(${randomImg})`, backgroundSize: 'cover' }} />
-      <button style={{ transform: `rotate(${spin}deg)` }} onClick={handleReplace} className="btn btn-replace">
+      <button type="button" style={{ transform: `rotate(${spin}deg)` }} onClick={handleReplace} className="btn btn-replace">
         <Replace />
       </button>
-      { loading ? <div className="center-circular"><CircularProgress /></div> :
-      <div className="list-tracks closed">
-        { tracks ? renderTracks() : null }
-      </div> }
+      { loading ? <div className="center-circular"><CircularProgress /></div>
+        : (
+          <div className="list-tracks closed">
+            { tracks ? renderTracks() : null }
+          </div>
+        ) }
     </div>
-  )
+  );
 }
 
 Random.propTypes = {
   code: PropTypes.string,
+  setTrack: PropTypes.func.isRequired,
 };
 
 Random.defaultProps = {
@@ -110,4 +110,4 @@ const mapDispatchToProps = (dispatch) => ({
   setTrack: (myCode) => dispatch(setTrack(myCode)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Random)
+export default connect(mapStateToProps, mapDispatchToProps)(Random);
