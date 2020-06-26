@@ -11,6 +11,8 @@
 <!-- about-the-project -->
 # About the project
 
+![image](./dilution.png)
+
 Are you the kind of person who repeats the same songs day after day? Why would you continue to do so?
 
 Dilution is a project that lets you look to continually changing tracks. On the main screen, you will have a record that will change each time you visit it. You will also have a link to the trendiest songs and some random songs to discover something new. Be careful when you are on the random tracks! One wrong move, and you may not see that song again.
@@ -18,6 +20,8 @@ Dilution is a project that lets you look to continually changing tracks. On the 
 If you enjoy a song, open it on Spotify!
 
 PS: You will need to have a Spotify account.
+
+For more usage information, watch this [video](https://youtu.be/KgKLon_QuTQ).
 
 ## Live version
 
