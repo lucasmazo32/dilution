@@ -36,11 +36,11 @@ For more usage information, watch this [video](https://youtu.be/KgKLon_QuTQ).
 
 ## Getting started
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running, follow these simple steps.
 
 Clone or fork the [repository](https://github.com/lucasmazo32/dilution).
 
-After clonning and changing directory, run in your terminal:
+After cloning and changing directory, run in your terminal:
 
 > ``` npm install ```
 
