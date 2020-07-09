@@ -52,6 +52,12 @@ If you want to build the production files for the project, run:
 
 > ``` npm run build ```
 
+## Future Features
+
+- Enable autoplay, enhancing the user experience.
+
+- Allow users to add the songs to one of their playlists on Spotify.
+
 # License
 
 >  CC-BY-4.0 License 
